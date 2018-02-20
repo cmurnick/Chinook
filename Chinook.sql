@@ -11,5 +11,8 @@ FROM Customer
 Inner JOIN Invoice ON Invoice.CustomerId=Customer.CustomerId
  WHERE Customer.Country = 'Brazil'
  
-
+ SELECT Employee.FirstName + '' + Employee.LastName
+ From Customer
+ Inner Join Employee on EmployeeId=Customer.SupportRepId
+ GROUP BY Employee.FirstName + '' + Employee.LastName
 
