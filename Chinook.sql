@@ -16,3 +16,6 @@ Inner JOIN Invoice ON Invoice.CustomerId=Customer.CustomerId
  Inner Join Employee on EmployeeId=Customer.SupportRepId
  GROUP BY Employee.FirstName + '' + Employee.LastName
 
+ SELECT DISTINCT BillingCountry
+ FROM Invoice
+
