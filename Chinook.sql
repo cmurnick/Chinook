@@ -18,4 +18,19 @@ Inner JOIN Invoice ON Invoice.CustomerId=Customer.CustomerId
 
  SELECT DISTINCT BillingCountry
  FROM Invoice
+ 
 
+ SELECT Employee.FirstName + ' ' + Employee.LastName, Invoice.InvoiceId
+ from Customer
+join Invoice on Invoice.CustomerId = Customer.CustomerId
+join Employee on Customer.CustomerId = Employee.EmployeeId
+ 
+ SELECT Invoice.Total, Customer.Company, Customer.Country, Employee.FirstName + ' ' + Employee.LastName 
+ from Invoice
+ join Customer on Customer.CustomerId = Invoice.CustomerId
+ join Employee on Employee.EmployeeId = Customer.CustomerId
+
+
+
+
+--Provide a query that shows the Invoice Total, Customer name, Country and Sale Agent name for all invoices and customers.
