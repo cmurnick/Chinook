@@ -30,7 +30,14 @@ join Employee on Customer.CustomerId = Employee.EmployeeId
  join Customer on Customer.CustomerId = Invoice.CustomerId
  join Employee on Employee.EmployeeId = Customer.CustomerId
 
+ SELECT Count (*)
+ FROM Invoice i
+ where i.InvoiceDate between '2009-01-01' and '2011 -01-01' 
+
+ SELECT InvoiceLine.InvoiceId, Count(*) as 'line items'
+ From InvoiceLine
+ Group By InvoiceLine.InvoiceId
 
 
-
---Provide a query that shows the Invoice Total, Customer name, Country and Sale Agent name for all invoices and customers.
+ 
+ 
